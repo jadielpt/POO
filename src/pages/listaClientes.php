@@ -23,6 +23,8 @@
            <th>SOBRENOME</th>
            <th>E-MAILL</th>
            <th>TELEFONE</th>
+           <th>FÍSICA|JÚRIDICA</th>
+           <th>NÍVEL</th>
            <th>VISUALIZAR</th>
            <th>ALTERAR</th>
            <th>DELETAR</th>                         
@@ -40,6 +42,8 @@
             <td><?php echo $value->getSobrenome();?></td>
             <td><?php echo $value->getEmail();?></td>
             <td><?php echo $value->getTelefone();?></td>
+            <td><?php echo $value->getTipo();?></td>
+            <td><?php echo $value->getGrauImportace();?></td>
             <td><a href="visualizarCliente?id=<?php echo $value->getId();?>"><button class="btn btn-info " type="submit" name="visualizar" >Visualizar</button></a></td>
             <td><a href="#"><button class="btn btn-primary disabled" type="submit" name="alterar" >Alterar</button></a></td>
             <td><a href="#"><button class="btn btn-danger disabled" type="submit" name="deletar">Deletar</button></a></td>

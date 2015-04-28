@@ -1,21 +1,23 @@
 <?php
 
-namespace Classes;
-
+namespace src\Classes;
+use src\interfaces\ClientesInterfaces;
 /**
  * Classe para cadastrar clientes
  *
  * Jadiel Cordeiro Filho
  */
-class Clientes {
-    private $id;
-    private $nome;
-    private $sobrenome;
-    private $email;
-    private $cpf;
-    private $telefone;
-    private $celular;
-    private $endereco;
+class Clientes implements ClientesInterfaces {
+    protected $id;
+    protected $nome;
+    protected $sobrenome;
+    protected $email;
+    protected $cpf;
+    protected $telefone;
+    protected $celular;
+    protected $endereco;
+    protected $tipo;
+    protected $grauImportance;
     
     public function getId() {
         return $this->id;
@@ -78,6 +80,20 @@ class Clientes {
         $this->endereco=$endereco;
     }
     
+    public function getTipo(){
+        return $this->tipo;
+    }
+    public function setTipo($tipo){
+        $this->tipo=$tipo;
+    }
+    
+    public function getGrauImportance(){
+        return $this->GrauImportance;
+    }
+    
+    public function setGrauImpotance($GrauImportance){
+        $this->grauImportance=$GrauImportance;
+    }
 }
 
 
