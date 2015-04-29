@@ -1,6 +1,6 @@
 <?php
 
-namespace interfaces;
+namespace Classes\interfaces;
 /**
  *
  * @Jadiel Cordeiro Filho
