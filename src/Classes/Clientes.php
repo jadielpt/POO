@@ -1,7 +1,7 @@
 <?php
 
-namespace src\Classes;
-use src\interfaces\ClientesInterfaces;
+namespace Classes;
+use interfaces\ClientesInterfaces;
 /**
  * Classe para cadastrar clientes
  *

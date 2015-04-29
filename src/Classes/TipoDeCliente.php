@@ -1,8 +1,8 @@
 <?php
 
 namespace Classes;
-use src\interfaces\EndCobrancaInteface;
-use src\interfaces\ClientesInterfaces;
+use interfaces\EndCobrancaInteface;
+
 /**
  * Classe de Cliente Pessoa Física
  *
