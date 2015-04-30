@@ -1,7 +1,7 @@
 <?php
 
 namespace Classes;
-use interfaces\ClientesInterfaces;
+use Classes\interfaces\ClientesInterfaces;
 /**
  * Classe para cadastrar clientes
  *
@@ -17,7 +17,7 @@ class Clientes implements ClientesInterfaces {
     protected $celular;
     protected $endereco;
     protected $tipo;
-    protected $grauImportance;
+    protected $grau;
     
     public function getId() {
         return $this->id;
@@ -87,12 +87,12 @@ class Clientes implements ClientesInterfaces {
         $this->tipo=$tipo;
     }
     
-    public function getGrauImportance(){
-        return $this->GrauImportance;
+    public function getGrau(){
+        return $this->grau;
     }
     
-    public function setGrauImpotance($GrauImportance){
-        $this->grauImportance=$GrauImportance;
+    public function setGrau($Grau){
+        $this->grau=$Grau;
     }
 }
 

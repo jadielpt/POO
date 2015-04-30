@@ -12,7 +12,9 @@ $cliente->setTelefone("33647001");
 $cliente->setCelular("84792286");
 $cliente->setEndereco("Brasília/Ceilândia");
 $cliente->setTipo("Pessoa Fisica");
-$cliente->setGrauImpotance("2");
+$cliente->setGrau("2");
+$cliente->setEndCobranca("Brasília/Gama");
+$cliente->setTelContato("33658979");
 
 $cliente1 = new TipoDeCliente();
 $cliente1->setId(2);
@@ -24,7 +26,7 @@ $cliente1->setTelefone("33641335");
 $cliente1->setCelular("847921245");
 $cliente1->setEndereco("Goias/Ocidental");
 $cliente1->setTipo("Juridica");
-$cliente1->setGrauImpotance("3");
+$cliente1->setGrau("3");
 
 $cliente2 = new TipoDeCliente();
 $cliente2->setId(3);
@@ -36,7 +38,7 @@ $cliente2->setTelefone("87459988");
 $cliente2->setCelular("84789652");
 $cliente2->setEndereco("Brasilia/Santamaria");
 $cliente2->setTipo("Fisica");
-$cliente2->setGrauImpotance("4");
+$cliente2->setGrau("4");
 
 $cliente3 = new TipoDeCliente();
 $cliente3->setId(4);
@@ -48,7 +50,7 @@ $cliente3->setTelefone("12459988");
 $cliente3->setCelular("12789652");
 $cliente3->setEndereco("Brasilia/Gama");
 $cliente3->setTipo("Juridica");
-$cliente3->setGrauImpotance("3");
+$cliente3->setGrau("3");
 
 $cliente4 = new TipoDeCliente();
 $cliente4->setId(5);
@@ -60,7 +62,7 @@ $cliente4->setTelefone("81459988");
 $cliente4->setCelular("81789652");
 $cliente4->setEndereco("Brasilia/Sobradinho");
 $cliente4->setTipo("Juridica");
-$cliente4->setGrauImpotance("3");
+$cliente4->setGrau("3");
 
 $cliente5 = new TipoDeCliente();
 $cliente5->setId(6);
@@ -72,7 +74,7 @@ $cliente5->setTelefone("88459988");
 $cliente5->setCelular("88789652");
 $cliente5->setEndereco("Goias/Uruana");
 $cliente5->setTipo("Juridica");
-$cliente5->setGrauImpotance("4");
+$cliente5->setGrau("4");
 
 $cliente6 = new TipoDeCliente();
 $cliente6->setId(7);
@@ -84,7 +86,7 @@ $cliente6->setTelefone("78459988");
 $cliente6->setCelular("25789652");
 $cliente6->setEndereco("Maranhão/Bacabal");
 $cliente6->setTipo("Fisica");
-$cliente6->setGrauImpotance("3");
+$cliente6->setGrau("3");
 
 $cliente7 = new TipoDeCliente();
 $cliente7->setId(8);
@@ -96,7 +98,7 @@ $cliente7->setTelefone("88459988");
 $cliente7->setCelular("25789652");
 $cliente7->setEndereco("Brasilia/Aguas Claras");
 $cliente7->setTipo("Fisica");
-$cliente7->setGrauImpotance("3");
+$cliente7->setGrau("3");
 
 $cliente8 = new TipoDeCliente();
 $cliente8->setId(9);
@@ -108,7 +110,7 @@ $cliente8->setTelefone("99459988");
 $cliente8->setCelular("55789652");
 $cliente8->setEndereco("Maranhão/São Luiz");
 $cliente8->setTipo("Juridica");
-$cliente8->setGrauImpotance("4");
+$cliente8->setGrau("4");
 
 $cliente9 = new TipoDeCliente();
 $cliente9->setId(10);
@@ -120,7 +122,7 @@ $cliente9->setTelefone("895459988");
 $cliente9->setCelular("698789652");
 $cliente9->setEndereco("Maranhão/São Luiz");
 $cliente9->setTipo("Fisica");
-$cliente9->setGrauImpotance("5");
+$cliente9->setGrau("5");
 
 
 $clientes = [$cliente,$cliente1,$cliente2,$cliente3,$cliente4,$cliente5,$cliente6,$cliente7,$cliente8,$cliente9];

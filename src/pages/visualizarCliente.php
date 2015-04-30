@@ -13,25 +13,19 @@
     }
     
     $id = filter_input(INPUT_GET, 'id');
-    if($id) {
+ 
         $cliente = findCliente($id, $clientes);
         echo "<h4>Código:<strong>{$cliente->getId()}</strong></h4>";
         echo "<h4>Nome:<strong>{$cliente->getNome()}</strong></h4>";
         echo "<h4>Sobrenome:<strong>{$cliente->getSobrenome()}</strong></h4>";
         echo "<h4>Email:<strong>{$cliente->getEmail()}</strong></h4>";
         echo "<h4>Cpf|Cnpj:<strong>{$cliente->getCpf()}</strong></h4>";
-        echo "<h4>Telefone<strong>{$cliente->getTelefone()}</strong></h4>";
-        echo "<h4>Celular<strong>{$cliente->getCelular()}</strong></h4>";
-        echo "<h4>Endereco<strong>{$cliente->getEndereco()}</strong></h4>";
+        echo "<h4>Telefone:<strong>{$cliente->getTelefone()}</strong></h4>";
+        echo "<h4>Celular:<strong>{$cliente->getCelular()}</strong></h4>";
+        echo "<h4>Endereco:<strong>{$cliente->getEndereco()}</strong></h4>";
         
-        if(method_exists($clienteS[$valor],'getCelular')) {
-          echo "<h4>Celular: <strong>".$clientes[$valor]->getCelular()."</strong></h4>";  
-        }else{
-            echo "<h4>Telefone Contato".$clientes[$valor]->getTelContato()."</strong></h4>";
-        }
-        
-         echo "Endereço cobrança: <strong>".$clientes[$valor]->getEndCobranca()."</strong></h4>";
-    }
+        echo "<h4>Endereço de entrega:<strong>{$cliente->getEndCobranca()}</strong></h4>";
+        echo "<h4>Telefone de Referecia::<strong>{$cliente->getTelContato()}</strong><h4>";
     
           
 ?>

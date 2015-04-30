@@ -7,8 +7,6 @@ namespace Classes\interfaces;
  */
 interface EndCobrancaInteface {
     
-    public function getCelular();
-    
     public function getTelContato();
     
     public function getEndCobranca();

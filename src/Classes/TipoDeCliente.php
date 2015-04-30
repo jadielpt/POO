@@ -1,7 +1,7 @@
 <?php
 
 namespace Classes;
-use interfaces\EndCobrancaInteface;
+use Classes\interfaces\EndCobrancaInteface;
 
 /**
  * Classe de Cliente Pessoa Física
@@ -10,31 +10,23 @@ use interfaces\EndCobrancaInteface;
  */
 class TipoDeCliente extends Clientes implements EndCobrancaInteface {
     
-    protected $celular;
+    
     protected $telContato;
     protected $endCobranca;
     
-    public function getCelular() {
-        $this->celular = $celular;
-        return $this;
-    }
     
-    public function setCelular($celular) {
-       $this->celular = $celular;
-       return $this->celuar;
-    }
-
-  public function getTelContato(){
-      if($this->telContato == null){
-          return $this->getCelular();
-      }else{
-          return $this->telContato;
-      }
+        
+   public function getTelContato(){
+     return $this->telContato;
   }
   
   public function setTelContato($telContato){
       $this->telContato = $telContato;
-      return $this;
+      return $this->telContato;
+  }
+  
+  public function getEndCobranca() {
+      return $this->endCobranca;
   }
   
   public function setEndCobranca($endCobranca){
@@ -42,14 +34,6 @@ class TipoDeCliente extends Clientes implements EndCobrancaInteface {
       return $this->endCobranca;
   }
   
-  public function getEndCobranca(){
-      if($this->endCobranca == null){
-          return$this->endCobranca();
-      }  else {
-          return $this->endCobranca;    
-      }
+  
   }
-
-   
-}
 
