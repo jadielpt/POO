@@ -8,7 +8,7 @@ use Classes\interfaces\EndCobrancaInteface;
  *
  * @Jadiel Cordeiro Filho
  */
-class TipoDeCliente extends Clientes implements EndCobrancaInteface {
+class EndCobranca extends Clientes implements EndCobrancaInteface {
     
     
     protected $telContato;

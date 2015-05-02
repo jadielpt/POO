@@ -1,8 +1,8 @@
 <?php
 
-use Classes\TipoDeCliente;
+use Classes\EndCobranca;
 
-$cliente = new TipoDeCliente();
+$cliente = new EndCobranca();
 $cliente->setId(1);
 $cliente->setNome("Jadiel");
 $cliente->setSobrenome("Cordeiro Filho");
@@ -16,7 +16,7 @@ $cliente->setGrau("2");
 $cliente->setEndCobranca("Brasília/Gama");
 $cliente->setTelContato("33658979");
 
-$cliente1 = new TipoDeCliente();
+$cliente1 = new EndCobranca();
 $cliente1->setId(2);
 $cliente1->setNome("Shelly");
 $cliente1->setSobrenome("Monteiro Silva");
@@ -28,7 +28,7 @@ $cliente1->setEndereco("Goias/Ocidental");
 $cliente1->setTipo("Juridica");
 $cliente1->setGrau("3");
 
-$cliente2 = new TipoDeCliente();
+$cliente2 = new EndCobranca();
 $cliente2->setId(3);
 $cliente2->setNome("Valquiria");
 $cliente2->setSobrenome("Matos");
@@ -40,7 +40,7 @@ $cliente2->setEndereco("Brasilia/Santamaria");
 $cliente2->setTipo("Fisica");
 $cliente2->setGrau("4");
 
-$cliente3 = new TipoDeCliente();
+$cliente3 = new EndCobranca();
 $cliente3->setId(4);
 $cliente3->setNome("Kely");
 $cliente3->setSobrenome("Martins");
@@ -52,7 +52,7 @@ $cliente3->setEndereco("Brasilia/Gama");
 $cliente3->setTipo("Juridica");
 $cliente3->setGrau("3");
 
-$cliente4 = new TipoDeCliente();
+$cliente4 = new EndCobranca();
 $cliente4->setId(5);
 $cliente4->setNome("Raimundo");
 $cliente4->setSobrenome("Gonçalves");
@@ -64,7 +64,7 @@ $cliente4->setEndereco("Brasilia/Sobradinho");
 $cliente4->setTipo("Juridica");
 $cliente4->setGrau("3");
 
-$cliente5 = new TipoDeCliente();
+$cliente5 = new EndCobranca();
 $cliente5->setId(6);
 $cliente5->setNome("Patricia");
 $cliente5->setSobrenome("Maria Salvador");
@@ -76,7 +76,7 @@ $cliente5->setEndereco("Goias/Uruana");
 $cliente5->setTipo("Juridica");
 $cliente5->setGrau("4");
 
-$cliente6 = new TipoDeCliente();
+$cliente6 = new EndCobranca();
 $cliente6->setId(7);
 $cliente6->setNome("Joedson");
 $cliente6->setSobrenome("Farias Mendes");
@@ -88,7 +88,7 @@ $cliente6->setEndereco("Maranhão/Bacabal");
 $cliente6->setTipo("Fisica");
 $cliente6->setGrau("3");
 
-$cliente7 = new TipoDeCliente();
+$cliente7 = new EndCobranca();
 $cliente7->setId(8);
 $cliente7->setNome("Jarbas");
 $cliente7->setSobrenome("Farias Cordeiro");
@@ -100,7 +100,7 @@ $cliente7->setEndereco("Brasilia/Aguas Claras");
 $cliente7->setTipo("Fisica");
 $cliente7->setGrau("3");
 
-$cliente8 = new TipoDeCliente();
+$cliente8 = new EndCobranca();
 $cliente8->setId(9);
 $cliente8->setNome("Nadja");
 $cliente8->setSobrenome("Farias Cordeiro");
@@ -112,7 +112,7 @@ $cliente8->setEndereco("Maranhão/São Luiz");
 $cliente8->setTipo("Juridica");
 $cliente8->setGrau("4");
 
-$cliente9 = new TipoDeCliente();
+$cliente9 = new EndCobranca();
 $cliente9->setId(10);
 $cliente9->setNome("Garibalde");
 $cliente9->setSobrenome("O Cara");
