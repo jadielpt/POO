@@ -1,6 +1,6 @@
 <?php
 
-namespace Classes;
+namespace Classes\Abstracts;
 use Classes\interfaces\EndCobrancaInteface;
 
 /**
@@ -8,7 +8,7 @@ use Classes\interfaces\EndCobrancaInteface;
  *
  * @Jadiel Cordeiro Filho
  */
-class EndCobranca extends Clientes implements EndCobrancaInteface {
+abstract class EndCobranca implements EndCobrancaInteface {
     
     
     protected $telContato;

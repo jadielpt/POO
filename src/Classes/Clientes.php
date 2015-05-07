@@ -2,12 +2,13 @@
 
 namespace Classes;
 use Classes\interfaces\ClientesInterfaces;
+use Classes\Abstracts\EndCobranca;
 /**
  * Classe para cadastrar clientes
  *
  * Jadiel Cordeiro Filho
  */
-class Clientes implements ClientesInterfaces {
+class Clientes extends EndCobranca implements ClientesInterfaces {
     protected $id;
     protected $nome;
     protected $sobrenome;
