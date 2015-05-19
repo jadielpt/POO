@@ -20,13 +20,27 @@ class Clientes extends EndCobranca implements ClientesInterfaces {
     protected $tipo;
     protected $grau;
     
+    
+    function __construct($id, $nome, $sobrenome, $email, $cpf, $telefone, $celular, $endereco,$tipo, $grau) {
+        $this->id           = $id;
+        $this->nome         = $nome;
+        $this->sobrenome    = $sobrenome;
+        $this->email        = $email;
+        $this->cpf          = $cpf;
+        $this->telefone     = $telefone;
+        $this->celular      = $celular;
+        $this->endereco     = $endereco;
+        $this->tipo         = $tipo;
+        $this->grau         =$grau;
+    }
+
+
     public function getId() {
         return $this->id;
     }
     public function setId($id){
         $this->id=$id;
     }
-
     public function getNome(){
         return $this->nome;
     }
@@ -34,7 +48,6 @@ class Clientes extends EndCobranca implements ClientesInterfaces {
     public function setNome($nome){
         $this->nome=$nome;
     }
-
     public function getSobrenome(){
         return $this->sobrenome;
     }
@@ -50,7 +63,6 @@ class Clientes extends EndCobranca implements ClientesInterfaces {
     public function setEmail($email){
         $this->email=$email;
     }
-
     public function getCpf(){
         return $this->cpf;
     }
@@ -96,5 +108,3 @@ class Clientes extends EndCobranca implements ClientesInterfaces {
         $this->grau=$Grau;
     }
 }
-
-
