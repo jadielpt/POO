@@ -9,14 +9,14 @@ namespace Classes;
  */
 class Conexao {
     
-    private static $dsn = 'mysql:host=localhost;dbname=curso=new';
+    private static $dsn = 'mysql:host=localhost;dbname=new';
     private static $user = 'root';
     private static $password = '100731';
     
     private static function connection(){
         
         try {
-            $pdo = new \PDO(self::$dsn, self::$username, self::$passwd, self::$options);
+            $pdo = new \PDO(self::$dsn, self::$user, self::$password);
             $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             return $pdo;
         } catch (\PDOException $ex) {

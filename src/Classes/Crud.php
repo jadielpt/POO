@@ -11,9 +11,20 @@ use Classes\Clientes;
  */
 class Crud {
   
-    private $connect;
+    private $pdo;
+    private $clientes=array();
     
-    public function persist(Clientes $clientes){
+    public function __construct(\PDO $pdo) {
+        $this->pdo = $pdo;
+    }
+
+    public function persist(Clientes $clientes) {
+        $this->clientes[] = $clientes;
+    }
+    
+    public function flush(){
+        foreach ($this->clientes as $clientes){
+        
         try {
             $this->connect->beginTransaction();
             $cadastrar = "INSERT INTO clientes (nome,sobrenome,email,cpf,telefone,celular,endereco,tipo,grau) VALUES (:nome,:sobrenome,:email,:cpf,:telefone,:celular,:endereco,:tipo,:grau)";
@@ -32,12 +43,14 @@ class Crud {
             )
                     
                     );
-            $this->connect->lastInsertId();
+            
+          $this->connect->lastInsertId();
             
         } catch (\PDOException $ex) {
             echo "ERROR: Não foi possível cadastrar dados no banco!";
             die("Código: {$ex->getCode()}<br> Mensagem:{$ex->getMessage()}<br> Arquivo: {$ex->getFile()}<br> Linha: {$ex->getLine()}");
             
+        }
         }
         return true;
     }
