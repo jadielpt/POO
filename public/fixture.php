@@ -4,22 +4,22 @@ use Classes\Crud;
 use Classes\Conexao;
 use Classes\Clientes;
 
-function criarDb(){
-   $dsn    = 'mysql:host=localhost';
-   $user   = 'root';
-   $pass   = '100731';
-   $dbname = 'new';
-   $table  = 'clientes';
-   
-   
-   try {
-     $pdo = new PDO($dsn,$user,$pass);
-     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     $pdo->query("CREATE DATABASE IF NOT EXISTS $dbname");
-     $pdo->query("use $dbname");
-     print ("O banco de dados {$dbname} foi criado com sucesso! <br>");
-     
-     $tab1 = "CREATE table $table (
+function criarDb() {
+    $dsn = 'mysql:host=localhost';
+    $user = 'root';
+    $pass = '100731';
+    $dbname = 'new';
+    $table = 'clientes';
+
+
+    try {
+        $pdo = new PDO($dsn, $user, $pass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo->query("CREATE DATABASE IF NOT EXISTS $dbname");
+        $pdo->query("use $dbname");
+        print ("O banco de dados {$dbname} foi criado com sucesso! <br>");
+
+        $tab1 = "CREATE table $table (
          id INT (10) AUTO_INCREMENT NOT NULL PRIMARY KEY,
          nome          VARCHAR (250) NOT NULL,
          sobrenome     VARCHAR (250) NOT NULL,
@@ -31,22 +31,27 @@ function criarDb(){
          grau          VARCHAR (250) NOT NULL,
          endcobranca   VARCHAR (250) NOT NULL,
          telcontato    VARCHAR (250) NOT NULL)";
-         
-         $pdo->exec($tab1);
-         print("A tabela {$table} foi criada com sucesso! <br>");
-             
-   } catch (PDOException $ex) {
+
+        $pdo->exec($tab1);
+        print("A tabela {$table} foi criada com sucesso! <br>");
+    } catch (PDOException $ex) {
         echo "ERROR: Não foi possível cadastrar dados no banco!";
         die("Código: {$ex->getCode()}<br> Mensagem: {$ex->getMessage()}<br> Arquivo {$ex->getFile()} <br> Linha: {$ex->getLine()}");
-       
-   }
-   return $pdo;
+    }
+    return $pdo;
 }
 
 criarDb();
 
 $clientes = new Clientes("Jadiel", "Cordeiro Filho", "jadielpt@gmail.com", "84792286", "33628633", "Qno 13 Conj A", "Fisica", "5", "Qno 12 con b", "91294848");
 
+
 $insert = new Crud(Conexao::getDb());
 $insert->persist($clientes);
+$insert->flush();
+
+$clientes1 = new Clientes("Joedson","Farias Mendes","Joedsom@gmail.com","20292739000121","35897456","89745236", "Bacabal Maranhão", "juridica","4","Coab 46","8184798");
+
+$insert = new Crud(Conexao::getDb());
+$insert->persist($clientes1);
 $insert->flush();
