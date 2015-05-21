@@ -11,21 +11,15 @@ use Classes\Clientes;
  */
 class Crud {
   
-    private $pdo;
-    private $clientes=array();
+    private $connect;
     
-    public function __construct(\PDO $pdo) {
-        $this->pdo = $pdo;
-    }
+    public function __construct(\PDO $connect){
+       $connect instanceof \PDO;
+       $this->connect = $connect;
+       }
+       public function persist(Clientes $clientes) {
 
-    public function persist(Clientes $clientes) {
-        $this->clientes[] = $clientes;
-    }
-    
-    public function flush(){
-        foreach ($this->clientes as $clientes){
-        
-        try {
+           try {
             $this->connect->beginTransaction();
             $cadastrar = "INSERT INTO clientes (nome,sobrenome,email,cpf,telefone,celular,endereco,tipo,grau) VALUES (:nome,:sobrenome,:email,:cpf,:telefone,:celular,:endereco,:tipo,:grau)";
             $dados = $this->connect->prepare($cadastrar);
@@ -44,14 +38,40 @@ class Crud {
                     
                     );
             
-          $this->connect->lastInsertId();
+              $this->connect->lastInsertId();
             
         } catch (\PDOException $ex) {
             echo "ERROR: Não foi possível cadastrar dados no banco!";
             die("Código: {$ex->getCode()}<br> Mensagem:{$ex->getMessage()}<br> Arquivo: {$ex->getFile()}<br> Linha: {$ex->getLine()}");
             
         }
+         
+        
+            }
+        public function flush(){
+            try {
+                $this->connect->commit();
+                
+            } catch (PDOException $ex) {
+               echo "ERROR: Não foi possível cadastra dados no banco!";
+               die ("Código: {$ex->getCode()}<br> Mensagem: {$ex->getMessage()} <br> Arquivo {$ex->getFile()}<br> Linha: {$ex->getLine()}");
+            }
+            return true;
         }
-        return true;
+        
+      public function read(){
+          try {
+           $listar = $this->connect->prepare("SELECT * FROM clientes");
+           $listar->execute();
+           $dados = $listar->fetchAll(\PDO::FETCH_ASSOC);
+          } catch (Exception $ex) {
+              echo "ERROR: Não foi possível cadastra dados no banco!";
+              die ("Código: {$ex->getCode()}<br> Mensagem: {$ex->getMessage()} <br> Arquivo {$ex->getFile()}<br> Linha: {$ex->getLine()}");
+          }
+          return $dados;
+      }
+      
     }
-}
+    
+    
+
