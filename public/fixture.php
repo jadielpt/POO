@@ -43,15 +43,12 @@ function criarDb() {
 
 criarDb();
 
+$insert = new Crud($pdo);
+
 $clientes = new Clientes("Jadiel", "Cordeiro Filho", "jadielpt@gmail.com", "84792286", "33628633", "Qno 13 Conj A", "Fisica", "5", "Qno 12 con b", "91294848");
+$clientes1 = new Clientes("Joedson", "Farias Mendes", "Joedsom@gmail.com", "20292739000121", "35897456", "89745236", "Bacabal Maranhão", "juridica", "4", "Coab 46", "8184798");
 
-
-$insert = new Crud(Conexao::getDb());
 $insert->persist($clientes);
-$insert->flush();
-
-$clientes1 = new Clientes("Joedson","Farias Mendes","Joedsom@gmail.com","20292739000121","35897456","89745236", "Bacabal Maranhão", "juridica","4","Coab 46","8184798");
-
-$insert = new Crud(Conexao::getDb());
 $insert->persist($clientes1);
+
 $insert->flush();
